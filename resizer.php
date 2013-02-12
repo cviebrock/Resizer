@@ -196,8 +196,9 @@ class Resizer {
 		
 		// If $file isn't an array, we'll turn it into one.
 		if ( !is_array($file) ) {
+			$file_dimensions = getimagesize($file);
 			$file = array(
-				'type'		=> File::mime( strtolower(File::extension($file)) ),
+				'type'		=> strtolower($file_dimensions['mime']),
 				'tmp_name'	=> $file
 			);
 		}
