@@ -198,7 +198,7 @@ class Resizer {
 		if ( !is_array($file) ) {
 			$file_dimensions = getimagesize($file);
 			$file = array(
-				'type'		=> strtolower($file_dimensions['mime']),
+				'type'		=> strtolower( $file_dimensions['mime'] ),
 				'tmp_name'	=> $file
 			);
 		}
@@ -219,7 +219,7 @@ class Resizer {
 	}
 	
 	/**
-	 * Return the image dimentions based on the option that was chosen.
+	 * Return the image dimensions based on the option that was chosen.
 	 * @param  int    $new_width  The width of the image
 	 * @param  int    $new_height The height of the image
 	 * @param  string $option     Either exact, portrait, landscape, auto or crop.
