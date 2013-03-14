@@ -10,7 +10,7 @@
  * I only turned it into a Laravel bundle.
  *
  * @package Resizer
- * @version 1.1
+ * @version 1.2
  * @author Maikel D (original author Jarrod Oberto)
  * @link
  * @example
@@ -206,6 +206,11 @@ class Resizer {
 		$mime = $file['type'];
 		$file_path = $file['tmp_name'];
 		
+		// Confirm that the file actually exists.
+		if ( !file_exists($file_path) ) {
+			throw new Exception( 'Could not find file: ' . $file_path . '. It doesn\'t seem to exist.' );
+		}
+
 		switch ( $mime )
 		{
 			case 'image/pjpeg': // IE6
