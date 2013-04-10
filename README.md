@@ -55,6 +55,10 @@ Then you can start resizing your images by simply calling:
         }
     });
 
+## Config
+
+Options have been added to allow for choosing where to crop from. You can set the vertical and horizontal crop positions in the /config/defaults.php file. Better yet, copy that file into your /application/config/ directory and rename it to **resizer.php**, so that when updating the bundle, your configuration isn't reset.
+
 ## Credits
 
 The image resize class was originally written in a tutorial by Jarrod Oberto on [NetTuts+](http://net.tutsplus.com/tutorials/php/image-resizing-made-easy-with-php/). I only modified it to use Laravel's File class, updated the coding style, added comments throughout the class file and turned it into a Laravel bundle.
