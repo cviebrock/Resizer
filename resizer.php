@@ -15,7 +15,7 @@
  * @link
  * @example
  * 		Resizer::open( mixed $file )
- *			->resize( int $width , int $height , string 'exact, portrait, landscape, auto or crop' )
+ *			->resize( int $width , int $height , string 'exact, portrait, landscape, auto, fit, fit-nopad or crop' )
  *			->save( string 'path/to/file.jpg' , int $quality );
  *
  *		// Resize and save an image.
@@ -262,6 +262,7 @@ class Resizer {
 				$optimal_height	= $option_array['optimal_height'];
 				break;
 			case 'fit':
+			case 'fit-nopad':
 				$option_array	= $this->get_size_by_fit( $new_width , $new_height );
 				$optimal_width	= $option_array['optimal_width'];
 				$optimal_height	= $option_array['optimal_height'];
